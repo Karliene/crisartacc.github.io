@@ -78,4 +78,181 @@
 
   /* Gallery grid (3 across) */
   .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
-  .tile{grid-column:span
+  .tile{grid-column:span 4;background:#1f1f1f;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .tile img{width:100%;height:100%;object-fit:cover;aspect-ratio:1/1}
+  .cap{padding:11px 12px;border-top:1px solid var(--line);color:var(--muted);font-size:.95rem}
+  @media(max-width:900px){.tile{grid-column:span 6}}
+  @media(max-width:560px){.tile{grid-column:span 12}}
+
+  /* Cards */
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:900px){.two{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px}
+  .muted{color:var(--muted)}
+
+  /* Prints / products */
+  .shop{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+  .product{grid-column:span 4;background:#1f1f1f;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .product img{width:100%;aspect-ratio:4/5;object-fit:cover}
+  .info{padding:14px 16px}
+  .title{font-weight:600}
+  .meta{color:var(--muted);font-size:.95rem;margin:.3rem 0 .8rem}
+  .buy{display:inline-flex;padding:.6rem .95rem;border-radius:999px;background:var(--accent);color:var(--accentText);border:0}
+  @media(max-width:900px){.product{grid-column:span 6}}
+  @media(max-width:560px){.product{grid-column:span 12}}
+
+  footer{border-top:1px solid var(--line);color:var(--muted);text-align:center;padding:28px 22px}
+
+  /* Lightbox */
+  .lightbox{position:fixed;inset:0;background:rgba(12,12,12,.92);display:none;align-items:center;justify-content:center;z-index:40}
+  .lightbox.open{display:flex}
+  .lightbox img{max-width:92vw;max-height:86vh;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+  .lightbox .close,.lightbox .prev,.lightbox .next{
+    position:absolute;top:18px;background:#1c1c1c;border:1px solid var(--line);color:var(--fg);
+    padding:.55rem .85rem;border-radius:10px;cursor:pointer}
+  .lightbox .close{right:18px}
+  .lightbox .prev{left:18px;top:50%;transform:translateY(-50%)}
+  .lightbox .next{right:18px;top:50%;transform:translateY(-50%)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="brand">Cristina Chiriță</div>
+    <nav>
+      <ul>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#prints">Prints</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a class="btn primary" href="https://www.instagram.com/cris.artacc" target="_blank" rel="noopener">Instagram</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-grid">
+    <figure class="panel" style="margin:0">
+      <img src="assets/posts/post-01.jpg" alt="Hero artwork by Cristina Chiriță" style="width:100%;height:100%;object-fit:cover;aspect-ratio:4/3" loading="eager">
+    </figure>
+    <div class="panel copy">
+      <div class="eyebrow">PORTFOLIO</div>
+      <h1>Romantasy portraits where botanicals and animals guard luminous heroines.</h1>
+      <p class="lede">Digital painting with a tattoo-sharp edge—glossy highlights, velvet shadows, and symbols turned into crowns.</p>
+      <div class="cta">
+        <a class="btn primary" href="#work">View work</a>
+        <a class="btn" style="border-color:var(--line)" href="#contact">Request a commission</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main class="wrap">
+  <!-- Selected Works -->
+  <div id="work" class="section-head"><h2>Selected Works</h2></div>
+  <div class="grid" id="grid">
+    <a class="tile" href="assets/posts/post-01.jpg" data-full="assets/posts/post-01.jpg" data-title="Botanica — Anemone"><img src="assets/posts/post-01.jpg" alt="Botanica — Anemone"><div class="cap">Botanica — Anemone</div></a>
+    <a class="tile" href="assets/posts/post-02.jpg" data-full="assets/posts/post-02.jpg" data-title="Botanica — Crimson Dahlia"><img src="assets/posts/post-02.jpg" alt="Botanica — Crimson Dahlia"><div class="cap">Botanica — Crimson Dahlia</div></a>
+    <a class="tile" href="assets/posts/post-03.jpg" data-full="assets/posts/post-03.jpg" data-title="Botanica — Plumeria"><img src="assets/posts/post-03.jpg" alt="Botanica — Plumeria"><div class="cap">Botanica — Plumeria</div></a>
+    <a class="tile" href="assets/posts/post-04.jpg" data-full="assets/posts/post-04.jpg" data-title="Chrome"><img src="assets/posts/post-04.jpg" alt="Chrome"><div class="cap">Chrome</div></a>
+    <a class="tile" href="assets/posts/post-05.jpg" data-full="assets/posts/post-05.jpg" data-title="Crimson"><img src="assets/posts/post-05.jpg" alt="Crimson"><div class="cap">Crimson</div></a>
+    <a class="tile" href="assets/posts/post-06.jpg" data-full="assets/posts/post-06.jpg" data-title="Fragile"><img src="assets/posts/post-06.jpg" alt="Fragile"><div class="cap">Fragile</div></a>
+    <a class="tile" href="assets/posts/post-07.jpg" data-full="assets/posts/post-07.jpg" data-title="Golden"><img src="assets/posts/post-07.jpg" alt="Golden"><div class="cap">Golden</div></a>
+    <a class="tile" href="assets/posts/post-08.jpg" data-full="assets/posts/post-08.jpg" data-title="Salvia"><img src="assets/posts/post-08.jpg" alt="Salvia"><div class="cap">Salvia</div></a>
+  </div>
+
+  <!-- Prints -->
+  <div id="prints" class="section-head" style="margin-top:46px"><h2>Prints</h2></div>
+  <div class="shop">
+    <div class="product">
+      <img src="assets/posts/post-05.jpg" alt="Crimson — Fine Art Print">
+      <div class="info">
+        <div class="title">Crimson — Fine Art Print</div>
+        <div class="meta">A4 / A3 • Matte archival paper</div>
+        <a class="buy" href="#" target="_blank" rel="noopener">Buy print</a>
+      </div>
+    </div>
+    <div class="product">
+      <img src="assets/posts/post-07.jpg" alt="Golden — Fine Art Print">
+      <div class="info">
+        <div class="title">Golden — Fine Art Print</div>
+        <div class="meta">A4 / A3 • Matte archival paper</div>
+        <a class="buy" href="#" target="_blank" rel="noopener">Buy print</a>
+      </div>
+    </div>
+    <div class="product">
+      <img src="assets/posts/post-02.jpg" alt="Botanica: Crimson Dahlia — Print">
+      <div class="info">
+        <div class="title">Botanica: Crimson Dahlia — Print</div>
+        <div class="meta">A4 / A3 • Matte archival paper</div>
+        <a class="buy" href="#" target="_blank" rel="noopener">Buy print</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- About -->
+  <div id="about" class="section-head" style="margin-top:46px"><h2>About</h2></div>
+  <div class="two">
+    <div class="card">
+      <p><strong>Short bio.</strong> Cristina Chiriță (<em>@cris.artacc</em>) creates high-contrast digital portraits that blend fantasy, fashion and folklore. Freckled muses glow with glassy highlights and knife-sharp liner, while flowers, forests and animal companions—foxes, dobermans, a sphynx—become symbols of protection and power. Her palette leans deep reds and soft greys; textures feel velvety and glossy at once. The result is intimate, modern romantasy: soft and feral, tender and a little dangerous.</p>
+    </div>
+    <div class="card">
+      <p><strong>Artist statement.</strong> I paint women as myth—caught between softness and steel. My portraits begin with realistic detail (skin, freckles, lashes) and tip into dream: flowers bloom as sigils, eyes glint like glass, and animals stand as guardians. In <em>Botanica</em> (Crimson Dahlia, Anemone, Plumeria, Salvia), flora becomes mood—grief, desire, renewal—worn like a crown or third eye. Light carves cheekbones and lacquered lips; contrasts drive the work: velvet shadows vs. polished highlights, romance vs. menace.</p>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:16px">
+    <p><strong>Series — Botanica.</strong> Flowers as protection and prophecy: Dahlia for courage, Anemone for fragility, Plumeria for rebirth, Salvia for healing—placed on the skin as if inked or crowned.</p>
+  </div>
+
+  <!-- Contact -->
+  <div id="contact" class="section-head" style="margin-top:46px"><h2>Contact</h2></div>
+  <div class="two">
+    <div class="card">
+      <p>For commissions and collaborations:</p>
+      <p><a class="btn primary" href="mailto:hello@crisartacc.com?subject=Commission%20inquiry%20for%20@cris.artacc&body=Hi%20Cristina%2C%0AProject%20type%3A%20%0ATimeline%3A%20%0ABudget%3A%20%0AReferences%3A%20">Email me</a></p>
+      <p class="muted">or DM on <a class="btn link" href="https://www.instagram.com/cris.artacc" target="_blank" rel="noopener">Instagram @cris.artacc</a>.</p>
+    </div>
+    <div class="card">
+      <p><strong>Selected tags</strong></p>
+      <p class="muted">Romantasy • Portrait • Tattoo-inspired lines • Botanicals • Animal guardians</p>
+    </div>
+  </div>
+</main>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="close" aria-label="Close">✕</button>
+  <button class="prev" aria-label="Previous">‹</button>
+  <img id="lightimg" alt="Artwork">
+  <button class="next" aria-label="Next">›</button>
+</div>
+
+<footer>© <span id="y"></span> Cristina Chiriță — @cris.artacc • All rights reserved.</footer>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+
+  // Lightbox
+  const tiles=[...document.querySelectorAll('.tile')];
+  const lb=document.getElementById('lightbox');
+  const img=document.getElementById('lightimg');
+  const closeBtn=lb.querySelector('.close');
+  const prevBtn=lb.querySelector('.prev');
+  const nextBtn=lb.querySelector('.next');
+  let idx=0;
+  const openAt=i=>{idx=i;img.src=tiles[i].dataset.full;lb.classList.add('open');lb.setAttribute('aria-hidden','false');}
+  const close=()=>{lb.classList.remove('open');lb.setAttribute('aria-hidden','true');img.removeAttribute('src');}
+  const prev=()=>openAt((idx-1+tiles.length)%tiles.length);
+  const next=()=>openAt((idx+1)%tiles.length);
+  tiles.forEach((t,i)=>t.addEventListener('click',e=>{e.preventDefault();openAt(i)}));
+  closeBtn.addEventListener('click',close);
+  prevBtn.addEventListener('click',prev);
+  nextBtn.addEventListener('click',next);
+  document.addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')prev();if(e.key==='ArrowRight')next();});
+  lb.addEventListener('click',e=>{if(e.target===lb)close();});
+</script>
+</body>
+</html>
