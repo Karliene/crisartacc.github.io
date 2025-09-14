@@ -1,17 +1,19 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cristina Chiriță — Digital Artist (@cris.artacc)</title>
-  <meta name="description" content="Portfolio of Cristina Chiriță (@cris.artacc): fantasy / romantasy, tattoo‑inspired digital illustration. Commissions open." />
-  <link rel="canonical" href="https://cris-artacc.com/" />
-  
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Cristina Chiriță — @cris.artacc</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Digital romantasy portraits by Cristina Chiriță—botanicals, animal guardians, glossy skin and bold liner. Commissions open.">
+  <link rel="canonical" href="https://cris-artacc.com/"/>
+
   <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Cristina Chiriță — Digital Artist" />
-  <meta property="og:description" content="Fantasy / romantasy • tattoo‑inspired illustration • commissions open" />
-  <meta property="og:image" content="assets/posts/post-01.jpg" />
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Cristina Chiriță — Digital Artist">
+  <meta property="og:description" content="Romantasy portraits where botanicals and animals guard luminous heroines—digital painting with a tattoo-sharp edge.">
+  <meta property="og:image" content="assets/posts/post-01.jpg">
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -26,179 +28,45 @@
       "https://www.tiktok.com/@cris.artacc"
     ],
     "image": "assets/posts/post-01.jpg",
-    "jobTitle": "Digital Artist"
+    "jobTitle": "Digital Artist",
+    "description": "Digital romantasy portraits—botanicals, animal guardians, glossy skin and bold liner."
   }
   </script>
 
   <style>
     :root{
-      --bg:#0c0c0e; --fg:#f5f5f7; --muted:#a9a9b0; --border:#1a1a1e; --card:#121216; --accent:#a78bfa;
-      --max: 1200px; --shadow: 0 20px 60px rgba(0,0,0,.35);
+      --bg:#0e0d10;         /* deep charcoal */
+      --paper:#e8dfd1;      /* soft beige */
+      --text:#f7f6f3;
+      --muted:#bcb5aa;
+      --card:#141317;
+      --border:#252229;
+      --ring: 0 10px 30px rgba(0,0,0,.35);
+      --accent:#7a2835;     /* default: burgundy */
+      --accent-2:#b17d89;   /* burgundy tint */
     }
+    /* Switch to sage by changing body class to .accent-sage */
+    body.accent-sage{
+      --accent:#8aa087;     /* sage */
+      --accent-2:#a7b7a5;
+    }
+
     *{box-sizing:border-box}
-    html,body{margin:0; padding:0; background:var(--bg); color:var(--fg); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;}
+    html,body{margin:0; padding:0; background:var(--bg); color:var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Inter, Roboto, Arial;}
     img{max-width:100%; display:block}
     a{color:inherit; text-decoration:none}
 
-    /* Header / Nav */
-    header{position:sticky; top:0; z-index:30; backdrop-filter: blur(8px); background:rgba(12,12,14,.6); border-bottom:1px solid rgba(255,255,255,.06)}
-    .nav{max-width:var(--max); margin:0 auto; padding:14px 18px; display:flex; align-items:center; justify-content:space-between}
-    .brand{font-weight:700; letter-spacing:.02em}
-    .brand small{opacity:.7}
-    .nav a.btn{padding:.6rem .95rem; border:1px solid rgba(255,255,255,.12); border-radius:12px}
-    .nav .links{display:flex; gap:14px; align-items:center}
-    .nav .links a:hover{opacity:.9}
+    /* faint stars / grain */
+    .veil:before{
+      content:"";
+      position:fixed; inset:0; z-index:-1;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(255,255,255,.05) 0 1px, transparent 2px) repeat,
+        radial-gradient(circle at 80% 70%, rgba(255,255,255,.04) 0 1px, transparent 2px) repeat;
+      background-size:120px 120px, 160px 160px;
+      pointer-events:none; opacity:.35;
+    }
 
-    /* Hero */
-    .hero{max-width:var(--max); margin:0 auto; padding:64px 18px 28px}
-    .hero .grid{display:grid; grid-template-columns: 1.1fr .9fr; gap:26px}
-    @media (max-width: 960px){ .hero .grid{grid-template-columns:1fr; gap:18px} }
-    .hero .panel{background:var(--card); border:1px solid var(--border); border-radius:22px; overflow:hidden; box-shadow:var(--shadow)}
-    .hero .copy{padding:28px}
-    .eyebrow{color:var(--muted); letter-spacing:.12em; font-size:.8rem}
-    h1{margin:.4rem 0 0; font-size:clamp(1.8rem, 3.6vw, 3rem); line-height:1.1}
-    .tag{margin:.8rem 0 0; color:var(--muted)}
-    .cta{display:flex; gap:10px; margin-top:16px; flex-wrap:wrap}
-    .btn-primary{background:linear-gradient(180deg, var(--accent), #6d28d9); color:white}
-    .btn{display:inline-flex; align-items:center; gap:.5rem; padding:.8rem 1rem; border-radius:14px; border:1px solid rgba(255,255,255,.1)}
-    .btn:hover{filter:brightness(1.05)}
-
-    /* Gallery */
-    .wrap{max-width:var(--max); margin:0 auto; padding:16px 18px 80px}
-    .section-title{display:flex; align-items:center; justify-content:space-between; margin:28px 0 14px}
-    .section-title h2{margin:0; font-size:1.3rem; letter-spacing:.05em; text-transform:uppercase; color:var(--muted)}
-
-    .grid{display:grid; grid-template-columns:repeat(12, 1fr); gap:12px}
-    .tile{grid-column: span 4; background:var(--card); border-radius:18px; overflow:hidden; border:1px solid var(--border); position:relative}
-    .tile img{width:100%; height:100%; object-fit:cover; aspect-ratio:1/1}
-    .tile .cap{position:absolute; left:0; right:0; bottom:0; padding:12px 14px; background:linear-gradient(180deg, transparent, rgba(0,0,0,.75)); font-size:.95rem}
-    @media (max-width: 900px){ .tile{grid-column: span 6} }
-    @media (max-width: 560px){ .tile{grid-column: span 12} }
-
-    /* About & Contact */
-    .two{display:grid; grid-template-columns: 1fr 1fr; gap:18px}
-    @media(max-width: 900px){ .two{grid-template-columns:1fr} }
-    .card{background:var(--card); border:1px solid var(--border); border-radius:22px; padding:22px; box-shadow:var(--shadow)}
-
-    footer{color:var(--muted); text-align:center; padding:28px 18px}
-
-    /* Lightbox */
-    .lightbox{position:fixed; inset:0; background:rgba(0,0,0,.92); display:none; align-items:center; justify-content:center; z-index:50}
-    .lightbox.open{display:flex}
-    .lightbox img{max-width:90vw; max-height:85vh; border-radius:12px}
-    .lightbox .close, .lightbox .prev, .lightbox .next{position:absolute; top:18px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.18); color:#fff; padding:.6rem .9rem; border-radius:10px; cursor:pointer}
-    .lightbox .close{right:18px}
-    .lightbox .prev{left:18px; top:50%; transform:translateY(-50%)}
-    .lightbox .next{right:18px; top:50%; transform:translateY(-50%)}
-  </style>
-</head>
-<body>
-  <header>
-    <div class="nav">
-      <div class="brand">Cristina Chiriță <small>• @cris.artacc</small></div>
-      <div class="links">
-        <a href="#work">Work</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-        <a class="btn" href="https://www.instagram.com/cris.artacc" target="_blank" rel="noopener">Instagram</a>
-      </div>
-    </div>
-  </header>
-
-  <section class="hero">
-    <div class="grid">
-      <figure class="panel" style="margin:0">
-        <img src="assets/posts/post-01.jpg" alt="Hero artwork by Cristina Chiriță" style="width:100%; height:100%; object-fit:cover; aspect-ratio: 4/3" loading="eager" />
-      </figure>
-      <div class="panel copy">
-        <div class="eyebrow">PORTFOLIO</div>
-        <h1>Fantasy‑leaning visuals with a bold, modern edge.</h1>
-        <p class="tag">Digital artist blending fantasy / romantasy with tattoo‑inspired linework. Available for cover art, posters, and character portrait commissions.</p>
-        <div class="cta">
-          <a class="btn btn-primary" href="#work">View work</a>
-          <a class="btn" href="#contact">Request a commission</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <main class="wrap" id="work">
-    <div class="section-title"><h2>Selected Works</h2></div>
-    <div class="grid" id="grid">
-      <!-- Each tile opens in a lightbox; swap image paths/titles as you like -->
-      <a class="tile" href="assets/posts/post-01.jpg" data-full="assets/posts/post-01.jpg" data-title="Artwork 1"><img src="assets/posts/post-01.jpg" alt="Artwork 1" loading="lazy"><div class="cap">Artwork 1</div></a>
-      <a class="tile" href="assets/posts/post-02.jpg" data-full="assets/posts/post-02.jpg" data-title="Artwork 2"><img src="assets/posts/post-02.jpg" alt="Artwork 2" loading="lazy"><div class="cap">Artwork 2</div></a>
-      <a class="tile" href="assets/posts/post-03.jpg" data-full="assets/posts/post-03.jpg" data-title="Artwork 3"><img src="assets/posts/post-03.jpg" alt="Artwork 3" loading="lazy"><div class="cap">Artwork 3</div></a>
-      <a class="tile" href="assets/posts/post-04.jpg" data-full="assets/posts/post-04.jpg" data-title="Artwork 4"><img src="assets/posts/post-04.jpg" alt="Artwork 4" loading="lazy"><div class="cap">Artwork 4</div></a>
-      <a class="tile" href="assets/posts/post-05.jpg" data-full="assets/posts/post-05.jpg" data-title="Artwork 5"><img src="assets/posts/post-05.jpg" alt="Artwork 5" loading="lazy"><div class="cap">Artwork 5</div></a>
-      <a class="tile" href="assets/posts/post-06.jpg" data-full="assets/posts/post-06.jpg" data-title="Artwork 6"><img src="assets/posts/post-06.jpg" alt="Artwork 6" loading="lazy"><div class="cap">Artwork 6</div></a>
-      <a class="tile" href="assets/posts/post-07.jpg" data-full="assets/posts/post-07.jpg" data-title="Artwork 7"><img src="assets/posts/post-07.jpg" alt="Artwork 7" loading="lazy"><div class="cap">Artwork 7</div></a>
-      <a class="tile" href="assets/posts/post-08.jpg" data-full="assets/posts/post-08.jpg" data-title="Artwork 8"><img src="assets/posts/post-08.jpg" alt="Artwork 8" loading="lazy"><div class="cap">Artwork 8</div></a>
-    </div>
-
-    <div id="about" class="section-title" style="margin-top:44px"><h2>About</h2></div>
-    <div class="two">
-      <div class="card">
-        <p>Hi, I’m <strong>Cristina Chiriță</strong> — the artist behind <em>@cris.artacc</em>. I create fantasy‑leaning digital illustrations with expressive portraiture, romantic motifs and tattoo‑inspired shapes.</p>
-        <p>Tools: iPad • Procreate • Photoshop. Based in EU. Available for freelance commissions, cover art, and collaborations.</p>
-      </div>
-      <div class="card">
-        <p><strong>Highlights</strong></p>
-        <ul>
-          <li>Open for character portraits & cover/poster concepts</li>
-          <li>Delivery: high‑res JPG/PNG • optional print‑ready PDF</li>
-          <li>Turnaround depends on scope (typical 1–2 weeks)</li>
-        </ul>
-      </div>
-    </div>
-
-    <div id="contact" class="section-title" style="margin-top:44px"><h2>Contact</h2></div>
-    <div class="two">
-      <div class="card">
-        <p>For commissions and collaborations:</p>
-        <p><a class="btn btn-primary" href="mailto:hello@crisartacc.com?subject=Commission%20inquiry%20for%20@cris.artacc&body=Hi%20Cristina%2C%0AProject%20type%3A%20%0ATimeline%3A%20%0ABudget%3A%20%0AReferences%3A%20">Email me</a></p>
-        <p>or DM on <a href="https://www.instagram.com/cris.artacc" target="_blank" rel="noopener">Instagram</a>.</p>
-      </div>
-      <div class="card">
-        <p><strong>Social</strong></p>
-        <p><a href="https://www.instagram.com/cris.artacc" target="_blank" rel="noopener">Instagram @cris.artacc</a><br>
-        <a href="https://www.tiktok.com/@cris.artacc" target="_blank" rel="noopener">TikTok @cris.artacc</a></p>
-      </div>
-    </div>
-  </main>
-
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <button class="close" aria-label="Close">✕</button>
-    <button class="prev" aria-label="Previous">‹</button>
-    <img id="lightimg" alt="Artwork" />
-    <button class="next" aria-label="Next">›</button>
-  </div>
-
-  <footer>© <span id="y"></span> Cristina Chiriță — @cris.artacc • All rights reserved.</footer>
-
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-
-    // Lightbox logic
-    const tiles = Array.from(document.querySelectorAll('.tile'));
-    const lb = document.getElementById('lightbox');
-    const img = document.getElementById('lightimg');
-    const closeBtn = lb.querySelector('.close');
-    const prevBtn = lb.querySelector('.prev');
-    const nextBtn = lb.querySelector('.next');
-    let idx = 0;
-
-    function openAt(i){ idx = i; const t = tiles[i]; img.src = t.dataset.full; lb.classList.add('open'); lb.setAttribute('aria-hidden','false'); }
-    function close(){ lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); img.removeAttribute('src'); }
-    function prev(){ openAt((idx - 1 + tiles.length) % tiles.length); }
-    function next(){ openAt((idx + 1) % tiles.length); }
-
-    tiles.forEach((t,i)=> t.addEventListener('click', e=>{ e.preventDefault(); openAt(i); }));
-    closeBtn.addEventListener('click', close);
-    prevBtn.addEventListener('click', prev);
-    nextBtn.addEventListener('click', next);
-    document.addEventListener('keydown', e=>{ if(!lb.classList.contains('open')) return; if(e.key==='Escape') close(); if(e.key==='ArrowLeft') prev(); if(e.key==='ArrowRight') next(); });
-    lb.addEventListener('click', e=>{ if(e.target===lb) close(); });
-  </script>
-</body>
-</html>
+    header{position:sticky; top:0; z-index:40; backdrop-filter: blur(10px);
+      background:rgba(14,13,16,.55); border-b
