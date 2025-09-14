@@ -121,6 +121,14 @@
     .lightbox .prev{left:18px; top:50%; transform:translateY(-50%)}
     .lightbox .next{right:18px; top:50%; transform:translateY(-50%)}
   </style>
+  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.6.0/default/snipcart.css"/>
+<script async src="https://cdn.snipcart.com/themes/v3.6.0/default/snipcart.js"></script>
+<style>
+  /* Make Snipcart buttons match your beige accent */
+  .snipcart-modal__close { border-color:#2a2a2a }
+  .snipcart-button-primary { background:#FFE4C4; color:#202020; }
+  .snipcart-button-primary:hover { filter:brightness(.96); }
+</style>
 </head>
 <body>
 
@@ -135,6 +143,10 @@
         <a href="#contact">Contact</a>
         <a class="btn primary" href="https://www.instagram.com/cris.artacc" target="_blank" rel="noopener">Instagram</a>
       </nav>
+      <button class="btn snipcart-checkout">
+  Cart (<span class="snipcart-items-count">0</span>)
+</button>
+
     </div>
   </header>
 
@@ -292,5 +304,8 @@
     document.addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')prev();if(e.key==='ArrowRight')next();});
     lb.addEventListener('click',e=>{if(e.target===lb)close();});
   </script>
+  <!-- Snipcart container (required) -->
+<div hidden id="snipcart" data-api-key="ZmIyNGQ0OTAtODIzZS00MTNjLTgxMjEtZjJjZmFlODYyZDBmNjM4OTM0NjYzMDI5Mjk0NjM3" data-config-add-product-behavior="none"></div>
+
 </body>
 </html>
